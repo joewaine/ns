@@ -1,53 +1,67 @@
 <template>
     <main>
+      <section :id="offering.category" v-for="offering in offerings" v-bind:key="offering.title" class="section hero is-primary is-fullheight">
+        <div v-if="offering.visible" class="carousel">
+       <h4>{{offering.title}}</h4>
+        <carousel :items="offering.slideNo ? offering.slideNo : 3">
+          <div v-for="item in offering.items" v-bind:key="item.name">
+            {{item.name}} ${{item.price}}
+            
+            <img v-bind:src="item.img" />
+{{item.description}}
 
 
-<section style="text-align: center;">
-
-<br><br><br>
-  <h1>Coming Soon!</h1>
 
 
+<div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;"><div data-tock-reserve="true" class="TockButton-link"><div class="TockButton TockButton-blue"><span class="TockWidget-B2">Mama Family Meal </span></div></div></div>
 
-<div style="cursor:pointer;" id="mama-dummy-button" class="TockButton-buttonContainer">
-  <div data-tock-reserve="true" class="TockButton-link">
-    <div class="TockButton TockButton-blue">
-      <span class="TockWidget-B2">Mama Family Meal
-        </span>
+
+            <div class="order-panel">
+          <template v-if="item.availableFamilyMeals">
+          <br>
+                <!-- <button class="order-button" v-bind:class="{ reserved: meal.reserved === true, 'not-available': meal.amountRemaining === 0 }" @click="confirmOrder(meal.timeslot)" v-for="(meal) in item.availableFamilyMeals" v-bind:key="meal.timeslot">
+                    {{meal.timeslot}}&nbsp;({{meal.amountRemaining}})&nbsp;{{meal.reserved ? 'reserved' : ''}}
+                  </button> -->
+        </template>
+              </div>
+
+
+    <!-- <button class="snipcart-add-item"
+    v-bind:data-item-id="item.name"
+    v-bind:data-item-price="item.price"
+    data-item-url="/home"
+    data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
+    v-bind:data-item-image="item.img"
+    v-bind:data-item-name="item.name">
+    Add to cart
+  </button> -->
+
+
+          <!-- <button
+            :data-item-name="item.name"
+            :data-item-price="item.price"
+            :data-item-id="item.name"
+            type="button"
+            class="snipcart-add-item"
+            data-item-url="/"
+          >
+            Add to cart
+          </button> -->
+
+
+
+
+          </div>
+
+
+
+
+
+        </carousel>  
+
         </div>
-        </div>
-        </div>
 
-
-
-
-<div style="cursor:pointer;" id="mama-dummy-button" class="TockButton-buttonContainer">
-  <div data-tock-reserve="true" class="TockButton-link">
-    <div class="TockButton TockButton-blue">
-      <span class="TockWidget-B2">Mama Family Meal 2
-        </span>
-        </div>
-        </div>
-        </div>
-
-
-
-<div style="cursor:pointer;" id="mama-dummy-button" class="TockButton-buttonContainer">
-  <div data-tock-reserve="true" class="TockButton-link">
-    <div class="TockButton TockButton-blue">
-      <span class="TockWidget-B2">Mama Family Meal 3
-        </span>
-        </div>
-        </div>
-        </div>
-
-
-
-
-
-  </section>
-
-
+      </section>
     </main>
 </template>
 
@@ -142,9 +156,4 @@ h4{
   text-align: center;
 }
 
-
-
-h1{
-color: #F05D5B;
-}
 </style>

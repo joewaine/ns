@@ -13,6 +13,12 @@
     </template>
 
   <Logo />
+
+
+
+<!-- <a @click="logUserOut()">logout</a> -->
+
+  
 </div>
 
       </div>

@@ -13,10 +13,15 @@ const routes = [
       requiresAuth: true
     }
   },
+  // {
+  //   path: "/",
+  //   name: "login",
+  //   component: () => import("../views/login.vue")
+  // },
   {
     path: "/",
     name: "home",
-    component: Home,
+    component: () => import("../views/Home.vue")
   },
   {
     path: "/register",
