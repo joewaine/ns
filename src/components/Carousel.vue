@@ -8,21 +8,14 @@
             {{item.name}} ${{item.price}}
             
             <img v-bind:src="item.img" />
-{{item.description}}
-
-
-
-
-<div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;"><div data-tock-reserve="true" class="TockButton-link"><div class="TockButton TockButton-blue"><span class="TockWidget-B2">Mama Family Meal </span></div></div></div>
-
-
+            {{item.description}}
             <div class="order-panel">
-          <template v-if="item.availableFamilyMeals">
-          <br>
-                <!-- <button class="order-button" v-bind:class="{ reserved: meal.reserved === true, 'not-available': meal.amountRemaining === 0 }" @click="confirmOrder(meal.timeslot)" v-for="(meal) in item.availableFamilyMeals" v-bind:key="meal.timeslot">
-                    {{meal.timeslot}}&nbsp;({{meal.amountRemaining}})&nbsp;{{meal.reserved ? 'reserved' : ''}}
-                  </button> -->
-        </template>
+            <template v-if="item.availableFamilyMeals">
+              <div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;"><div data-tock-reserve="true" class="TockButton-link"><div class="TockButton TockButton-blue"><span class="TockWidget-B2">Mama Family Meal </span></div></div></div>
+            </template>
+            <template v-if="item.caviarLink">
+              <a :href="item.caviarLink" target="_blank">order</a>
+            </template>
               </div>
 
 
