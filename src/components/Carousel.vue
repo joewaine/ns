@@ -11,10 +11,10 @@
             {{item.description}}
             <div class="order-panel">
             <template v-if="item.availableFamilyMeals">
-              <div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;" @click="loggit()">
+              <div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;">
                 <div data-tock-reserve="true" class="TockButton-link">
                   <div class="TockButton TockButton-blue">
-                    <span class="TockWidget-B2">Mama Family Meal </span>
+                    <span class="TockWidget-B2" @click="loggit()">Mama Family Meal </span>
                   </div>
                 </div>
               </div>
