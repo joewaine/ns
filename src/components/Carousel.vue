@@ -11,7 +11,13 @@
             {{item.description}}
             <div class="order-panel">
             <template v-if="item.availableFamilyMeals">
-              <div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;"><div data-tock-reserve="true" class="TockButton-link"><div class="TockButton TockButton-blue"><span class="TockWidget-B2">Mama Family Meal </span></div></div></div>
+              <div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;" @click="loggit()">
+                <div data-tock-reserve="true" class="TockButton-link">
+                  <div class="TockButton TockButton-blue">
+                    <span class="TockWidget-B2">Mama Family Meal </span>
+                  </div>
+                </div>
+              </div>
             </template>
             <template v-if="item.caviarLink">
               <a :href="item.caviarLink" target="_blank">order</a>
@@ -79,6 +85,9 @@ export default {
     return this.$store.state.inventory
   },
   methods: {
+    loggit () {
+      console.log(134)
+    },
     toggle: function (event) {
       if (event.target.classList.contains('is-open')) {
         this.$store.commit('decrement')
