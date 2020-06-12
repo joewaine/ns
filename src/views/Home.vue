@@ -16,6 +16,14 @@
   </li>
   </ul>
 
+
+
+
+<div v-html="body.items[0].elements.body.value">
+
+<!-- {{body.items[0].elements.body.value}} -->
+
+</div>
 <SlideShow />
 
 
@@ -44,15 +52,16 @@ export default {
   data() {
     return {
       user: {},
-      products: ''
+      products: '',
+      body: ''
     };
   },
   methods: {
-    getUserDetails() {
-      let token = localStorage.getItem("jwt");
-      let decoded = VueJwtDecode.decode(token);
-      this.user = decoded;
-    },
+    // getUserDetails() {
+    //   let token = localStorage.getItem("jwt");
+    //   let decoded = VueJwtDecode.decode(token);
+    //   this.user = decoded;
+    // },
     async getUserProducts(){
 
       let response = await this.$http.get('/user/' + this.user._id) 
@@ -66,11 +75,12 @@ export default {
     async showProducts() {
 
 
+console.log(146)
 
 
-
-       let response = await this.$http.get('https://simplejsoncms.com/api/m9uijyzkyb').then(result => { 
+       let response = await this.$http.get('https://deliver.kontent.ai/59d83379-4e1f-00e0-f07e-25ac5dba3666/items').then(result => { 
           console.log(result.data)
+          this.body = result.data
         })
 
 
@@ -83,12 +93,12 @@ export default {
     
   },
   created() {
-    this.getUserDetails();
+    // this.getUserDetails();
     this.getUserProducts();
 this.showProducts();
 
 
-
+console.log(146)
   }
 
 };
