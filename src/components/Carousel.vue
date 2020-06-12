@@ -3,7 +3,7 @@
       <section :id="offering.category" v-for="offering in offerings" v-bind:key="offering.title" class="section hero is-primary is-fullheight">
         <div v-if="offering.visible" class="carousel">
        <h4>{{offering.title}}</h4>
-      <carousel :startposition="2" :items="offering.slideNo ? offering.slideNo : 3">
+      <carousel :startPosition="2" :items="offering.slideNo ? offering.slideNo : 3">
           <div v-for="item in offering.items" v-bind:key="item.name">
             {{item.name}} ${{item.price}}
             

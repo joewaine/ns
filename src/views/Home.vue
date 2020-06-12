@@ -64,27 +64,26 @@ export default {
     // },
     async getUserProducts(){
 
-      let response = await this.$http.get('/user/' + this.user._id) 
-      // console.log(response.data.user.products)
-      this.products = response.data.user.products
+      // let response = await this.$http.get('/user/' + this.user._id) 
+      // // console.log(response.data.user.products)
+      // this.products = response.data.user.products
     },
-    logUserOut() {
-      localStorage.removeItem("jwt");
-      this.$router.push("/");
-    },
+    // logUserOut() {
+    //   localStorage.removeItem("jwt");
+    //   this.$router.push("/");
+    // },
     async showProducts() {
 
 
-console.log(146)
 
 
        let response = await this.$http.get('https://deliver.kontent.ai/59d83379-4e1f-00e0-f07e-25ac5dba3666/items').then(result => { 
-          console.log(result.data)
+          // console.log(result.data)
           this.body = result.data
         })
 
 
-      console.log(response) 
+
 
 
 
@@ -94,11 +93,9 @@ console.log(146)
   },
   created() {
     // this.getUserDetails();
-    this.getUserProducts();
-this.showProducts();
+    // this.getUserProducts();
+    this.showProducts();
 
-
-console.log(146)
   }
 
 };
