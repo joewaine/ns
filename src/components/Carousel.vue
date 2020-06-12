@@ -36,7 +36,7 @@
   </button> -->
 
 
-          <!-- <button
+          <button
             :data-item-name="item.name"
             :data-item-price="item.price"
             :data-item-id="item.name"
@@ -45,10 +45,13 @@
             data-item-url="/"
           >
             Add to cart
-          </button> -->
+          </button>
 
 
-
+<!-- name 
+price
+id
+url -->
 
           </div>
 

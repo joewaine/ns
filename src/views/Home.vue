@@ -17,13 +17,10 @@
   </ul>
 
 
-
-
-<div v-html="body.items[0].elements.body.value">
-
+<!-- <div v-html="body.items[0].elements.body.value"> -->
 <!-- {{body.items[0].elements.body.value}} -->
+<!-- </div> -->
 
-</div>
 <SlideShow />
 
 
@@ -77,16 +74,19 @@ export default {
 
 
 
-       let response = await this.$http.get('https://deliver.kontent.ai/59d83379-4e1f-00e0-f07e-25ac5dba3666/items').then(result => { 
-          // console.log(result.data)
-          this.body = result.data
+      //  let response = await this.$http.get('https://deliver.kontent.ai/59d83379-4e1f-00e0-f07e-25ac5dba3666/items').then(result => { 
+      //     // console.log(result.data)
+      //     this.body = result.data
+      //   })
+     
+
+let response = await this.$http.get('https://app.snipcart.com/api/products', {
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          console.log('response', response)
         })
-
-
-
-
-
-
 
     }
     
