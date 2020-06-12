@@ -30,7 +30,7 @@
             ref="scrollactive"
             >    <ul id="menu">
                 <li v-for="offering in store.offerings" @click="toggleMenu()" v-bind:key="offering.title">
-                    <a :href="'#'+offering.category" class="scrollactive-item nav-item">{{offering.title}}</a>
+                    <a :href="'#'+offering.category" class="scrollactive-item nav-item">{{offering.title.toLowerCase().trim()}}</a>
                     </li>
             </ul></scrollactive
           >
@@ -48,7 +48,7 @@
             ref="scrollactive"
             >    <ul id="menu" class="mobile-menu">
                 <li v-for="offering in store.offerings" @click="toggleMenu()" v-bind:key="offering.title">
-                    <a :href="'#'+offering.category" class="scrollactive-item nav-item">{{offering.title}}</a>
+                    <a :href="'#'+offering.category" class="scrollactive-item nav-item">{{offering.title.toLowerCase().trim()}}</a>
                     </li>
             </ul></scrollactive
           >
