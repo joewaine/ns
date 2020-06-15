@@ -8,6 +8,10 @@
        <h4>{{offering.title}}</h4>
       <carousel :items="offering.slideNo ? offering.slideNo : 3" :loop="false" :dots="false" :nav="false">
 
+
+
+
+
 <template v-if="index === 0" slot="prev"><span class="prev"><Prev /></span></template>
 <template v-else class="subprev" slot="prev"><span class="prev"><Prev /></span></template>
  
@@ -131,10 +135,6 @@ export default {
 
 
 <style lang="scss">
-.carousel{
-  margin-bottom: 100px;
-}
-
 .reserved{
   background: red;
 }
@@ -251,6 +251,24 @@ bottom: 30px;
 #mama-dummy-button{
   width: 70px;
   margin: 0 auto;
+}
+
+
+
+
+.carousel{
+  margin-bottom: 100px;
+}
+
+
+
+@media only screen and (max-width: 1080px) {
+
+.carousel{
+  margin-bottom: 40px;
+}
+
+
 }
 
 </style>

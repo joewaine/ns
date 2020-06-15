@@ -1,9 +1,22 @@
 <template>
 <div class="nav-wrap">
+    <template v-if="$mq === 'sm'">
+        <nav v-if="$route.name === 'home'" class="navbar navbar-expand-lg navbar-dark fix-top-nav nadi-sub-header mobile-nav" :class="{ expanded: mobNavExpanded }">
+        <div class="container">
+          <scrollactive
+            ref="scrollactive"
+            >    <ul id="menu" class="mobile-menu">
+                <li v-for="offering in store.offerings" @click="toggleMenu()" v-bind:key="offering.title">
+                    <a :href="'#'+offering.category" class="scrollactive-item nav-item">{{offering.title.toLowerCase().trim()}}</a>
+                    </li>
+            </ul></scrollactive
+          >
+        </div>
+    </nav>
+    </template>
 <div class="fixed-nav">
     <div class="navbar navbar-expand-lg navbar-dark fix-top-nav nadi-header">
       <div class="container">
-
 <div class="full-width-logo">
        
 <template v-if="$mq === 'sm'">
@@ -41,20 +54,7 @@
 
 </div>    
 
-<template v-if="$mq === 'sm'">
-        <nav v-if="$route.name === 'home'" class="navbar navbar-expand-lg navbar-dark fix-top-nav nadi-sub-header mobile-nav" :class="{ expanded: mobNavExpanded }">
-        <div class="container">
-          <scrollactive
-            ref="scrollactive"
-            >    <ul id="menu" class="mobile-menu">
-                <li v-for="offering in store.offerings" @click="toggleMenu()" v-bind:key="offering.title">
-                    <a :href="'#'+offering.category" class="scrollactive-item nav-item">{{offering.title.toLowerCase().trim()}}</a>
-                    </li>
-            </ul></scrollactive
-          >
-        </div>
-    </nav>
-    </template>
+
 </div>
 </template>
 
