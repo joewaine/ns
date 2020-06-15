@@ -22,7 +22,8 @@ export default{
 .cls-1{fill:#f05d5b;}.cls-2{fill:#fff;}
 
 
-svg#order{width:100px;
+svg#order{
+    width:70px;
 margin: 10px auto;
 }
 

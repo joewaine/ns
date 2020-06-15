@@ -55,7 +55,8 @@ const store = new Vuex.Store({
               img: 'https://affectionate-gates-5cf4d4.netlify.app/img/1.jpg',
               price: 40.00,
               today: true,
-              description: 'Family Meal - Meat or Vegetarian- Pick Up',
+              // description: 'Family Meal - Meat or Vegetarian- Pick Up',
+              description: '',
               availableFamilyMeals: [
                 { timeslot: '4:30', amountRemaining: 0, reserved: false },
                 { timeslot: '5:00', amountRemaining: 20, reserved: false },
@@ -70,7 +71,8 @@ const store = new Vuex.Store({
               img: 'https://affectionate-gates-5cf4d4.netlify.app/img/2.jpg',
               price: 40.00,
               today: false,
-              description: 'Family Meal - Meat or Vegetarian- Pick Up',
+              // description: 'Family Meal - Meat or Vegetarian- Pick Up',
+              description: '',
               availableFamilyMeals: [
                 { timeslot: '4:30', amountRemaining: 0, reserved: false },
                 { timeslot: '5:00', amountRemaining: 0, reserved: false },
@@ -85,7 +87,8 @@ const store = new Vuex.Store({
               img: 'https://affectionate-gates-5cf4d4.netlify.app/img/3.jpg',
               price: 40.00,
               today: false,
-              description: 'Family Meal - Meat or Vegetarian- Pick Up',
+              // description: 'Family Meal - Meat or Vegetarian- Pick Up',
+              description: '',
               availableFamilyMeals: [
                 { timeslot: '4:30', amountRemaining: 0, reserved: false },
                 { timeslot: '5:00', amountRemaining: 0, reserved: false },
@@ -100,7 +103,8 @@ const store = new Vuex.Store({
               img: 'https://affectionate-gates-5cf4d4.netlify.app/img/4.jpg',
               price: 40.00,
               today: false,
-              description: 'Family Meal - Meat or Vegetarian- Pick Up',
+              // description: 'Family Meal - Meat or Vegetarian- Pick Up',
+              description: '',
               availableFamilyMeals: [
                 { timeslot: '4:30', amountRemaining: 0, reserved: false },
                 { timeslot: '5:00', amountRemaining: 0, reserved: false },
@@ -144,94 +148,123 @@ const store = new Vuex.Store({
               price: 12.00,
               description: '',
               caviarLink: 'https://www.trycaviar.com/m/mamnoon-street-6597'
+            },
+            {
+              name: 'shirt',
+              img: 'https://affectionate-gates-5cf4d4.netlify.app/img/ala/1.jpg',
+              price: 5.00,
+              description: '',
+              caviarLink: 'https://www.trycaviar.com/m/mamnoon-street-6597'
+            },
+            {
+              name: 'watch',
+              img: 'https://affectionate-gates-5cf4d4.netlify.app/img/ala/2.jpg',
+              price: 10.00,
+              description: '',
+              caviarLink: 'https://www.trycaviar.com/m/mamnoon-street-6597'
+            },
+            {
+              name: 'hat',
+              img: 'https://affectionate-gates-5cf4d4.netlify.app/img/ala/3.jpg',
+              price: 12.00,
+              description: '',
+              caviarLink: 'https://www.trycaviar.com/m/mamnoon-street-6597'
+            },
+            {
+              name: 'cookbook',
+              img: 'https://affectionate-gates-5cf4d4.netlify.app/img/ala/1.jpg',
+              price: 12.00,
+              description: '',
+              caviarLink: 'https://www.trycaviar.com/m/mamnoon-street-6597'
             }
           ]
         },
-        // {
-        //   visible: true,
-        //   title: 'Bar Pickup',
-        //   category: 'barpickup',
-        //   items: [
-        //     {
-        //       name: 'shirt',
-        //       img: 'https://placeimg.com/200/200/any?7',
-        //       price: 20.00
-        //     },
-        //     {
-        //       name: 'watch',
-        //       img: 'https://placeimg.com/200/200/any?8',
-        //       price: 20.00
-        //     },
-        //     {
-        //       name: 'hat',
-        //       img: 'https://placeimg.com/200/200/any?9',
-        //       price: 20.00
-        //     },
-        //     {
-        //       name: 'cookbook',
-        //       img: 'https://placeimg.com/200/200/any?10',
-        //       price: 20.00
-        //     }
-        //   ]
-        // },
-        // {
-        //   visible: true,
-        //   title: 'Pantry',
-        //   category: 'pantry',
-        //   items: [
-        //     {
-        //       name: 'shirt',
-        //       img: 'https://placeimg.com/200/200/any?7',
-        //       price: 20.00
-        //     },
-        //     {
-        //       name: 'watch',
-        //       img: 'https://placeimg.com/200/200/any?8',
-        //       price: 20.00
-        //     },
-        //     {
-        //       name: 'hat',
-        //       img: 'https://placeimg.com/200/200/any?9',
-        //       price: 20.00
-        //     },
-        //     {
-        //       name: 'cookbook',
-        //       img: 'https://placeimg.com/200/200/any?10',
-        //       price: 20.00
-        //     }
-        //   ]
-        // },
-        // {
-        //   visible: true,
-        //   title: 'Merch',
-        //   category: 'merch',
-        //   items: [
-        //     {
-        //       name: 'shirt',
-        //       img: 'https://placeimg.com/200/200/any?7',
-        //       price: 20.00
-        //     },
-        //     {
-        //       name: 'watch',
-        //       img: 'https://placeimg.com/200/200/any?8',
-        //       price: 20.00
-        //     },
-        //     {
-        //       name: 'hat',
-        //       img: 'https://placeimg.com/200/200/any?9',
-        //       price: 20.00
-        //     },
-        //     {
-        //       name: 'cookbook',
-        //       img: 'https://placeimg.com/200/200/any?10',
-        //       price: 20.00
-        //     }
-        //   ]
-        // },
+        {
+          visible: true,
+          title: 'Bar Pickup',
+          category: 'barpickup',
+          items: [
+            {
+              name: 'shirt',
+              img: 'https://placeimg.com/200/200/any?7',
+              price: 20.00
+            },
+            {
+              name: 'watch',
+              img: 'https://placeimg.com/200/200/any?8',
+              price: 20.00
+            },
+            {
+              name: 'hat',
+              img: 'https://placeimg.com/200/200/any?9',
+              price: 20.00
+            },
+            {
+              name: 'cookbook',
+              img: 'https://placeimg.com/200/200/any?10',
+              price: 20.00
+            }
+          ]
+        },
+        {
+          visible: true,
+          title: 'Pantry',
+          category: 'pantry',
+          items: [
+            {
+              name: 'shirt',
+              img: 'https://placeimg.com/200/200/any?7',
+              price: 20.00
+            },
+            {
+              name: 'watch',
+              img: 'https://placeimg.com/200/200/any?8',
+              price: 20.00
+            },
+            {
+              name: 'hat',
+              img: 'https://placeimg.com/200/200/any?9',
+              price: 20.00
+            },
+            {
+              name: 'cookbook',
+              img: 'https://placeimg.com/200/200/any?10',
+              price: 20.00
+            }
+          ]
+        },
+        {
+          visible: true,
+          title: 'Merch',
+          category: 'merch',
+          items: [
+            {
+              name: 'shirt',
+              img: 'https://placeimg.com/200/200/any?7',
+              price: 20.00
+            },
+            {
+              name: 'watch',
+              img: 'https://placeimg.com/200/200/any?8',
+              price: 20.00
+            },
+            {
+              name: 'hat',
+              img: 'https://placeimg.com/200/200/any?9',
+              price: 20.00
+            },
+            {
+              name: 'cookbook',
+              img: 'https://placeimg.com/200/200/any?10',
+              price: 20.00
+            }
+          ]
+        },
         {
           visible: true,
           title: 'Testimonials',
           category: 'testimonials',
+          slideNo: 1,
           items: [
             {
               quote: "Thank you! so so good!!!! YUM - Diane Najm"
