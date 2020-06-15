@@ -6,13 +6,13 @@
 
         <div v-if="offering.visible" class="carousel">
        <h4>{{offering.title}}</h4>
-      <carousel :items="offering.slideNo ? offering.slideNo : 3">
-          <div v-for="item in offering.items" v-bind:key="item.name">
+      <carousel :items="offering.slideNo ? offering.slideNo : 3" :loop="true" :dots="false">
+          <div v-for="item in offering.items" v-bind:key="item.name" style="text-align:center;">
             <!-- {{item.name}} ${{item.price}} -->
             
             <img v-bind:src="item.img" />
             {{item.description}}
-            <div class="order-panel">
+            <div class="order-panel" style="margin-top:10px;">
 
             <template v-if="item.caviarLink">
               <a :href="item.caviarLink" target="_blank"><Order /></a>
@@ -26,24 +26,6 @@
 </div>
 
           </div>
-
-<!-- tockbutton:  {{offering.tockButton}} -->
-            <!-- <template v-if="item.availableFamilyMeals"> -->
-              <!-- <div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;">
-                <div data-tock-reserve="true" class="TockButton-link">
-                  <div class="TockButton TockButton-blue">
-                    <span class="TockWidget-B2" @click="loggit()">Mama Family Meal </span>
-                  </div>
-                </div>
-              </div> -->
-
-
-    <!-- <template slot="prev"><span class="prev">prev</span></template>
-<template slot="next"><span class="next">next</span></template> -->
-
-
-
-<!-- <div class='nav-btn prev-slide'></div> <div class='nav-btn next-slide'></div> -->
 
         </carousel>  
 
