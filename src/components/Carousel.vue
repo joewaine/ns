@@ -1,65 +1,60 @@
 <template>
     <main>
-      <section :id="offering.category" v-for="offering in offerings" v-bind:key="offering.title" class="section hero is-primary is-fullheight">
+      <section :id="offering.category" v-for="offering in offerings" v-bind:key="offering.title" class="section hero is-primary is-fullheight familymeal" :class="offering.category === 'familymeal'">
+
+
+
         <div v-if="offering.visible" class="carousel">
        <h4>{{offering.title}}</h4>
-      <carousel :startPosition="2" :items="offering.slideNo ? offering.slideNo : 3">
+      <carousel :items="offering.slideNo ? offering.slideNo : 3">
           <div v-for="item in offering.items" v-bind:key="item.name">
-            {{item.name}} ${{item.price}}
+            <!-- {{item.name}} ${{item.price}} -->
             
             <img v-bind:src="item.img" />
             {{item.description}}
             <div class="order-panel">
-            <template v-if="item.availableFamilyMeals">
-              <div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;">
+
+            <template v-if="item.caviarLink">
+              <a :href="item.caviarLink" target="_blank"><Order /></a>
+            </template>
+              </div>
+
+
+
+<div v-if="item.quote">
+{{item.quote}}
+</div>
+
+          </div>
+
+<!-- tockbutton:  {{offering.tockButton}} -->
+            <!-- <template v-if="item.availableFamilyMeals"> -->
+              <!-- <div id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;">
                 <div data-tock-reserve="true" class="TockButton-link">
                   <div class="TockButton TockButton-blue">
                     <span class="TockWidget-B2" @click="loggit()">Mama Family Meal </span>
                   </div>
                 </div>
-              </div>
-            </template>
-            <template v-if="item.caviarLink">
-              <a :href="item.caviarLink" target="_blank">order</a>
-            </template>
-              </div>
+              </div> -->
 
 
-    <!-- <button class="snipcart-add-item"
-    v-bind:data-item-id="item.name"
-    v-bind:data-item-price="item.price"
-    data-item-url="/home"
-    data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-    v-bind:data-item-image="item.img"
-    v-bind:data-item-name="item.name">
-    Add to cart
-  </button> -->
-
-
-          <button
-            :data-item-name="item.name"
-            :data-item-price="item.price"
-            :data-item-id="item.name"
-            type="button"
-            class="snipcart-add-item"
-            data-item-url="/"
-          >
-            Add to cart
-          </button>
-
-
-<!-- name 
-price
-id
-url -->
-
-          </div>
+    <!-- <template slot="prev"><span class="prev">prev</span></template>
+<template slot="next"><span class="next">next</span></template> -->
 
 
 
-
+<!-- <div class='nav-btn prev-slide'></div> <div class='nav-btn next-slide'></div> -->
 
         </carousel>  
+
+
+              <div v-if="offering.tockButton" id="mama-dummy-button" class="TockButton-buttonContainer" style="cursor: pointer;">
+                <div data-tock-reserve="true" class="TockButton-link">
+                  <div class="TockButton TockButton-blue">
+                    <span class="TockWidget-B2" @click="loggit()"><OrderStar /></span>
+                  </div>
+                </div>
+              </div>
 
         </div>
 
@@ -71,8 +66,14 @@ url -->
 
 import carousel from 'vue-owl-carousel'
 
+
+import Order from "@/components/Order";
+import OrderStar from "@/components/OrderStar";
+
+
+
 export default {
-  components: { carousel },
+  components: { carousel, Order, OrderStar },
   computed: {
     count () {
       return this.$store.state.count
@@ -100,17 +101,6 @@ export default {
         this.$store.commit('increment')
       }
     },
-    async showCartData() {
-
-try {
-    await Snipcart.api.cart;
-await console.log(Snipcart.api.cart);
-
-} catch (error) {
-    console.log(error);
-}
-
-    },
     increment () {
       this.$store.commit('increment')
     },
@@ -135,7 +125,7 @@ await console.log(Snipcart.api.cart);
 </script>
 
 
-<style>
+<style lang="scss">
 .carousel{
   margin-bottom: 100px;
 }
@@ -159,6 +149,29 @@ await console.log(Snipcart.api.cart);
 
 h4{
   text-align: center;
+}
+
+.narrow{
+  background-color: #F05D5B;
+
+
+  h4{
+        color: #FFF367;
+  }
+}
+
+
+
+[id^=carousel_prev_]{
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+}
+
+[id^=carousel_next_]{
+  position: absolute;
+  bottom: -100px;
+  right: 0;
 }
 
 </style>

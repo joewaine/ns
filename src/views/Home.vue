@@ -16,10 +16,40 @@
   </li>
   </ul>
 
+<!-- 
+<div v-html="body.items[0].elements.body.value">
+{{body.items[0].elements.body.value}}
+</div> -->
 
-<!-- <div v-html="body.items[0].elements.body.value"> -->
-<!-- {{body.items[0].elements.body.value}} -->
-<!-- </div> -->
+
+
+
+
+<!-- <div v-for="item in body.items">
+
+
+<button type="button" class="snipcart-add-item"
+ :data-item-name="item.elements.name.value"
+ :data-item-price="item.elements.price.value"
+ :data-item-id="item.elements.id.value"
+ :data-item-url="item.elements.url.value">
+  Add to cart
+</button>
+
+
+</div>
+<button class="snipcart-add-item"
+  data-item-id="starry-night"
+  data-item-price="79.99"
+  data-item-url="/paintings/starry-night"
+  data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
+  data-item-image="/assets/images/starry-night.jpg"
+  data-item-name="The Starry Night"
+  data-item-custom1-name="Frame color"
+  data-item-custom1-options="Black|Brown[+100.00]|Gold[+300.00]">
+  Add to cart
+</button> -->
+
 
 <SlideShow />
 
@@ -74,19 +104,19 @@ export default {
 
 
 
-      //  let response = await this.$http.get('https://deliver.kontent.ai/59d83379-4e1f-00e0-f07e-25ac5dba3666/items').then(result => { 
-      //     // console.log(result.data)
-      //     this.body = result.data
-      //   })
+       let response = await this.$http.get('https://deliver.kontent.ai/59d83379-4e1f-00e0-f07e-25ac5dba3666/items').then(result => { 
+          console.log(result.data)
+          this.body = result.data
+        })
      
 
-let response = await this.$http.get('https://app.snipcart.com/api/products', {
-          headers: {
-            'Accept': 'application/json'
-          }
-        }).then(response => {
-          console.log('response', response)
-        })
+// let response = await this.$http.get('https://app.snipcart.com/api/products', {
+//           headers: {
+//             'Accept': 'application/json'
+//           }
+//         }).then(response => {
+//           console.log('response', response)
+//         })
 
     }
     
@@ -101,7 +131,7 @@ let response = await this.$http.get('https://app.snipcart.com/api/products', {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
 
 
 .fix-top-nav{
@@ -114,7 +144,7 @@ let response = await this.$http.get('https://app.snipcart.com/api/products', {
 
 .section.hero{
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
 }
 
 
