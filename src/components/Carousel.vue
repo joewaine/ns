@@ -248,4 +248,9 @@ bottom: 30px;
 
 
 
+#mama-dummy-button{
+  width: 70px;
+  margin: 0 auto;
+}
+
 </style>
